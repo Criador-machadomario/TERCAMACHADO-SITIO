@@ -95,10 +95,6 @@ a:hover {
     color: #2c3e50;
 }
 
-.foto p:last-child {
-    font-size: 16px;
-    color: #27ae60; /* Cor do preço verde */
-}
 .whatsapp-contacto {
     background-color: #25D366; /* Cor verde do WhatsApp */
     padding: 15px;

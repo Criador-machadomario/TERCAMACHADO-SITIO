@@ -80,3 +80,20 @@ footer {
 footer p {
     font-size: 16px;
 }
+.whatsapp-contacto {
+    background-color: #25D366; /* Cor verde do WhatsApp */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.whatsapp-contacto a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.whatsapp-contacto a:hover {
+    text-decoration: underline;
+}

@@ -3,62 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terçamachado Lda</title>
+    <title>Terçamachado Lda - Driveshopping</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <h1>Terçamachado Lda</h1>
-        <p>NIF 5000092894</p>
-        <p>Morada: Cuanza Sul - Porto Amboim / Angola</p>
+        <div class="logo">Terçamachado Lda</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#agendamento">Agendamento</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="servicos">
-        <div class="container">
-            <h2>Nossos Serviços</h2>
-            <p>Transporte, Distribuição e Venda de Água Potável em Camiões Cisternas.</p>
-        </div>
+    <section class="hero" id="inicio">
+        <h1>Encomende a sua água potável com recolha ou entrega!</h1>
+        <a href="#produtos" class="btn">Ver Produtos</a>
     </section>
 
-    <section id="contactos">
-        <div class="container">
-            <h2>Contactos</h2>
-            <div class="whatsapp-contacto">
-                <a href="https://wa.me/934948841" target="_blank">Peça a sua água 934948841</a>
+    <section class="produtos" id="produtos">
+        <h2>Escolha a sua opção</h2>
+        <div class="produto-lista">
+            <div class="produto">
+                <h3>Camião 12.000L</h3>
+                <p>Preço: 22.000,00 AOK</p>
+                <a href="#agendamento" class="btn">Encomendar</a>
             </div>
-            <div class="whatsapp-contacto">
-                <a href="https://wa.me/957945898" target="_blank">Peça a sua água 957945898</a>
+            <div class="produto">
+                <h3>Camião 18.000L</h3>
+                <p>Preço: 28.000,00 AOK</p>
+                <a href="#agendamento" class="btn">Encomendar</a>
             </div>
-        </div>
-    </section>
-
-    <section id="galeria">
-        <div class="container">
-            <h2>Galeria de Camiões</h2>
-            <div class="galeria-fotos">
-                <div class="foto">
-                    <img src="https://images.unsplash.com/photo-1593946465512-bb26b2c4ab1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Camião Cisterna 25.000L">
-                    <p><strong>Camião Cisterna 25.000L</strong></p>
-                    <p>Preço: 34.000,00 AOK</p>
-                </div>
-                <div class="foto">
-                    <img src="https://images.unsplash.com/photo-1578926375605-cd2f67bfaad3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Camião Cisterna 18.000L">
-                    <p><strong>Camião Cisterna 18.000L</strong></p>
-                    <p>Preço: 28.000,00 AOK</p>
-                </div>
-                <div class="foto">
-                    <img src="https://images.unsplash.com/photo-1578926288097-9d9440c1d9b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Camião Cisterna 12.000L">
-                    <p><strong>Camião Cisterna 12.000L</strong></p>
-                    <p>Preço: 22.000,00 AOK</p>
-                </div>
+            <div class="produto">
+                <h3>Camião 25.000L</h3>
+                <p>Preço: 34.000,00 AOK</p>
+                <a href="#agendamento" class="btn">Encomendar</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Terçamachado Lda. Todos os direitos reservados.</p>
+    <section class="agendamento" id="agendamento">
+        <h2>Agende a sua Encomenda</h2>
+        <form onsubmit="return montarMensagem()">
+            <input type="text" id="nome" placeholder="Nome completo" required>
+            <input type="tel" id="telefone" placeholder="Contacto telefónico" required>
+            <input type="text" id="local" placeholder="Local de entrega ou recolha" required>
+            <input type="datetime-local" id="datahora" required>
+            <textarea id="obs" placeholder="Observações adicionais"></textarea>
+            <input type="submit" class="btn" value="Finalizar Encomenda via WhatsApp">
+        </form>
+    </section>
+
+    <footer id="contactos">
+        <p>Contactos: +244 XXX XXX XXX | Email: tercamachado@email.com</p>
+        <p>Localização: Porto Amboim, Cuanza Sul, Angola</p>
+        <p>&copy; 2025 Terçamachado Lda</p>
     </footer>
 
+    <script>
+        function montarMensagem() {
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const local = document.getElementById('local').value;
+            const datahora = document.getElementById('datahora').value;
+            const obs = document.getElementById('obs').value;
+
+            const msg =
+                "Nova Encomenda:%0A" +
+                "Nome: " + nome + "%0A" +
+                "Telefone: " + telefone + "%0A" +
+                "Local: " + local + "%0A" +
+                "Data/Hora: " + datahora + "%0A" +
+                "Observações: " + obs;
+
+            const link = "https://wa.me/244XXXXXXXXX?text=" + msg;
+            window.open(link, "_blank");
+            return false;
+        }
+    </script>
 </body>
 </html>
